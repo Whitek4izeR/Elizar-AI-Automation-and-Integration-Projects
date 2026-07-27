@@ -1,0 +1,1347 @@
+{
+  "name": "Tech V.A | Proj. # 2: Web Scraper for Job Hunting - Final (Error Handling + Data Cleanup) - Audited  - 3. Naming Hygiene",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Steps\n\n1. Trigger\n- Create an AI Assistant/Agent in Slack API and connect it to the Slack Trigger via Webhook\n\n\n\n\n\nNext: 32:00\n\n\nNote: **\n- OpenRouter needs payment.\n- Replaced OpenRouter with Gemini\n\n\n\n\nAdding Error Handler\n- Error Trigger\n\n\n\n\n## Next :\nData Cleanup/Manipulation/Engineering",
+        "height": 672,
+        "width": 368,
+        "color": "#1AA8CB"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1040,
+        1056
+      ],
+      "typeVersion": 1,
+      "id": "bd2ebdca-a2b1-4f4f-ac0b-eb02177a33cb",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Issues\n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/components/sticky-notes/)\n\n\n\n### A. Looping not working\n\nOnly 1 Item \n\n1. Check Results - Copy\n2. Split Out1\n3. Search files and folders1\n\n\n- updated the fields\n- now no. are getting transferred accordingly\n- reference Looping Over Items / Wait Node Tech V.A video.\n\n\n### B. Last IF Node \n\nOld:\n- is not empt\n\nNew:\n- @",
+        "height": 672,
+        "width": 368,
+        "color": "#F27878"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1424,
+        1056
+      ],
+      "typeVersion": 1,
+      "id": "79a90cd7-4387-418c-9702-b7ac8063dc07",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## I'm a note \n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/components/sticky-notes/)\n\n\n\n1. Check Results - Copy\n\nConditions\nOld\n{{ $json.data }} | Object - is not empty\n\nNew\n{{ $json.data.jobs }} | Array - is not empty\n\n\n\n2. Split Out1\n\nOld: <data>\nNew: <data.jobs>\n",
+        "height": 656,
+        "width": 480,
+        "color": "#2E947B"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1248,
+        608
+      ],
+      "typeVersion": 1,
+      "id": "89e9c5bc-f50b-43ee-9e4b-bc43eb048bfc",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## Updated - 7 / 10 / 26\n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/components/sticky-notes/)\n\n1. Node - Search files and folders1\n\n\n#### Search files and folders1\n\nOld:\n{{ $('Loop Over Items1').item.json['0'].job_title }}\n\n\nNew:\n{{ $('Loop Over Items1').item.json.job_title }}",
+        "height": 768,
+        "width": 224,
+        "color": "#2E947B"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2608,
+        688
+      ],
+      "typeVersion": 1,
+      "id": "662cdbbe-e59e-4aa5-af55-28b8d1d51c1c",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "content": "## I'm a note \n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/components/sticky-notes/)\n\n\n\n\n\nFilename:\n\nOld:\n{{ $('Loop Over Items1').item.json['0'].job_title }}\n\n\n\nNew:\n{{ $('Loop Over Items1').item.json.job_title }}\n",
+        "height": 768,
+        "width": 208,
+        "color": "#2E947B"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3264,
+        784
+      ],
+      "typeVersion": 1,
+      "id": "d1ab73c3-f1e0-4895-a2cc-06217afa756b",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "content": "## I'm a note \n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/components/sticky-notes/)\n\n\n\nConditions\nOld:\n{{ $('Create Resume Content and Proposal').item.json.output.draftEmailAddress }}\n\n| is not empty\n\n\n\nNew:\n{{ $('Create Resume Content and Proposal1').item.json.output.draftEmailAddress }}\n\n\n| contains | @\n",
+        "height": 768,
+        "width": 224,
+        "color": "#2E947B"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3904,
+        784
+      ],
+      "typeVersion": 1,
+      "id": "3fb420a6-01d3-4314-856e-13c97aa52492",
+      "name": "Sticky Note8"
+    },
+    {
+      "parameters": {
+        "content": "## I'm a note \n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/components/sticky-notes/)\n\n# 1. Secrets management \n- Updated the Credentials \n\nGet All Jobs - Copy\n\n1. On Credentials - \n\nAdded \n\n- Name: x-rapidapi-key\n- Value: Jsearch API Key\n\n2. Get All Jobs - Copy\n- Authentication: Generic Credential Type\n- Generic Auth Type: Header Auth\n- Header Auth: RapidAPI - JSearch\n\nRemoved\n\nSpecify Headers > Headers \n- Name: x-rapidapi-key\n- Value:  Jsearch API Key\n\n\n\nStep 1 — Rotate the key first - Done\nStep 2 — Move it into an n8n Credential - Done\nStep 3 — Docker-specific: pin your encryption key - I am not well verse to this, I will learn it maybe soon. Is this really important for begiinner - I have  a DevOps knowledge but a very beginner knowledge and experience.\n\n\n# 2. Fragile LLM-based routing\n- Query is Valid?  -Copy Node\n\n\n### The problem, in plain words\nRight now, you ask Gemini: \"Is this a job search question?\" and Gemini replies with plain text — hopefully exactly the word YES.\n\nThen your IF node checks: \"Does the text equal exactly YES?\"\n\n#### The problem: \nGemini doesn't always answer in the exact same way. Sometimes it might say Yes, YES., or Yes, this is a job search. — all of these mean yes, but none of them match YES exactly. So your workflow wrongly treats a valid job search as invalid.\n\nThink of it like a login form that only accepts a password if it's typed in ALL CAPS with no typos — too strict, and it breaks for silly reasons.\n\n### The fix (simple version)\n\nYou already use a smarter method later in your workflow — the \"Structured Output Parser\" node that forces Gemini to reply in clean JSON instead of free text. We'll do the same trick here. Instead of asking Gemini to reply with a word, we ask it to reply with a simple true/false value that can't be misspelled or mismatched.\n\n\n\n- ### Replaced: \nOld: {{ $json.content.parts[0].text }} \n\nNew: {{ $json.content.parts[0].text.trim().toUpperCase() }}\n\n(Remove the white space from both end and capitalized)\n\nThis combination applies two standard JavaScript methods sequentially in an n8n expression:\n\n- .trim(): \nRemoves spaces, tabs, and newlines from both ends of the string.\n\n- .toUpperCase(): \nConverts all remaining letters to uppercase.\n\n# 3. Naming hygiene\n\n### How to do it safely\n\nClick each node once → press F2 (or double-click the title) → type the new name → Enter.\nDo this top to bottom, left to right (roughly following the flow) so you don't lose track of which node you're on.\nSave after every 4–5 renames rather than all at once, in case anything looks off and you want to undo.\n\n###  One thing to watch: \n- Some of your expressions reference nodes by name, e.g. {{ $('Loop Over Items1').item.json.job_title }}. \nIf you rename a node, n8n automatically updates these references for you — that's one of the nice things about renaming vs. deleting/recreating. \n\n- Just double check a couple of your Google Docs and Slack nodes afterward to confirm the expressions still resolve correctly (open the node, look for red error indicators).\n\n- Take your time with this one — no rush, no risk to logic. Ready for #4 (weak email validation) whenever you are, or would you like to do the renaming first and come back?\n\n#### Note: \nIf you happen to do late Naming Hygiene in N8N - do not worry about the variables or name on the fields as it automatically update the names for each variables.\n\n\n\n# 4. Weak Email Validation\nThe problem, in plain words\n\nYour \"If1\" node checks: does the email address contain an \"@\" symbol? That's the only test. But lots of things contain \"@\" without being a valid email:\n\n- \"@\" alone — passes your check, but it's not an email\n- \"contact@\" — passes, but it's missing everything after the @\n- \"@company.com\" — passes, but there's no name before the @\n- \"reach out @ this address\" — passes, but it's not an email at all, just a sentence with an @ symbol in it\n\n\n\n### Resolution:\n\nAdded > IF: Has Valid Email? Node\n\n- Conditions: matches regex | ^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$\n- Convert types where required: On\n\n\n\n\n# 5. Inconsistent Error Handling\n\n\n\n## Nodes that already have protection:\n\n- JSearch: Get Job Listings — retry + continue on error\n- Google Docs: Insert Tailored Content — continue on error\n- Gmail: Draft Application Email — continue on error\n- Slack: Post Final Summary — retry + continue on error\n- Drive: Copy Resume Template — continue on error\n- Gemini Agent: Tailor Resume + Proposal — retry + continue on error\n\n## Nodes with no protection at all:\n\n### Gemini: Classify Job Query — the very first AI call in your workflow\n- Solution: Added Subworkflow + Connected to Error handling and Monitoring workflow [Added another Trigger to catch the items/data]\n\n#### Slack: Listen for Mention (trigger — different story, covered below)\n- Practical fix, low effort: set up free uptime monitoring (e.g., UptimeRobot, or healthchecks.io) to ping your n8n instance's public URL every few minutes. If it goes down, you get an email/notification — not a fix for the lost mention itself, but you'll at least know it happened instead of a user wondering why the bot never replied.\n\n#### Drive: Check if Resume Exist\n- Solution: Followed the same concept\n\n#### Slack: Notify Searching\n- Solution: Turn ON Retry On Fail + On Error can stay as \"Stop Workflow\"\n\n#### Slack: Notify No Results\n- Solution: Turn ON Retry On Fail + On Error can stay as \"Stop Workflow\"\n\n\n# 6. The \"Wait and Hope\" Pattern\n## Issue - The Fragile \"wait and hope\" pattern.\n\n\"Wait2\" and \"Wait3\" (default-duration Wait nodes before checking if a Drive copy/doc-update finished) are a workaround for eventual-consistency lag in the Google Drive API — your sticky note admits this was a \"looping not working\" bug. A fixed wait is a race condition waiting to happen at scale (slower API day = broken run). Replace with a polling loop: check-if-ready → IF not ready → wait N seconds → loop back, with a max retry count.\n\n\n\n## Resolution:\nGiven everything else you're mid-verifying, here's my honest suggestion: go with the quick stopgap for today rather than building the full polling loop.\n\nQuick stopgap — bump the wait time on both Wait nodes:\n\n- Open \"Wait: For Drive Copy to Finish\" → increase the duration from its current default to somewhere around 3–5 seconds.\n\n-  Open \"Wait: For Doc Update to Finish\" → same adjustment, 3–5 seconds.\n\n\nThis won't eliminate the root \"guessing\" problem, but Google Drive copy/propagation delays are typically sub-second to a couple seconds in practice, so this buffer should cover the vast majority of real cases without meaningfully slowing down your workflow.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "height": 4272,
+        "width": 848,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1040,
+        1744
+      ],
+      "typeVersion": 1,
+      "id": "48e428b2-1c19-4cfd-af04-43ae44e9f5cf",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"isJobQuery\": true\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        576,
+        1488
+      ],
+      "id": "27b08447-80aa-4d7f-93d5-da29af616e57",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "content": "## I'm a note \n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/components/sticky-notes/)\n\n\n## Data Cleanup\nWhat it means: Fixing, formatting, or removing incorrect, corrupted, or duplicate data.Why this fits: \n- The .trim() method cleans up human entry errors (like accidental spaces or hidden tabs) so systems can match text accurately.\n\n## Data Manipulation\nWhat it means: Modifying or adapting data to make it readable, structured, or compatible with a destination system.Why this fits: \n- The .toUpperCase() method transforms the actual appearance and casing of the text to enforce a standardized format.\n\n## Data Engineering\nWhat it means: The overarching practice of building pipelines to move, transform, and store data.Why this fits: \n\n- Cleanup and manipulation are steps inside the Transformation (T) phase of an ETL/ELT pipeline built by a data engineer.If you are building an automation pipeline, let me know:Where is the data coming from? (e.g., forms, emails, databases)Where is it going? (e.g., CRMs, Google Sheets, APIs)",
+        "height": 704,
+        "width": 576,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1632,
+        1744
+      ],
+      "typeVersion": 1,
+      "id": "d7a0bb0b-4d32-417d-abd2-40df102b747c",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## I'm a note \n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/components/sticky-notes/\n\n\n![Image2](https://github.com/Whitek4izeR/Elizar-AI-Automation-and-Integration-Projects/blob/main/N8N/3.%20Name%20Cleaning.jpg?raw=true)\n\n\n\n\n\n\n\n\n\n   ",
+        "height": 1024,
+        "width": 784
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1840,
+        2816
+      ],
+      "typeVersion": 1,
+      "id": "8a4d1d09-42dd-4580-9823-b93896009201",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "content": "## Sticky Notes\n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/components/sticky-notes/)\n\nhttps://docs.n8n.io/build/understand-workflows/workflow-components/add-notes-and-documentation\n\n### How to break it down:\n- https://www.youtube.com/watch?v=: This is the standard web address format for a YouTube video.\n- e5f0P1lJxuo: This unique 11-character string is the exact Video ID.&t=789s: \n- The ampersand (&) separates the video ID from extra parameters. In this case, t=789s is a timestamp telling the video to start playing at 789 seconds (13 minutes and 9 seconds).\n\n\n@[Youtube](e5f0P1lJxuo)",
+        "height": 1664,
+        "width": 2464,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -4352,
+        2816
+      ],
+      "id": "29ece53d-cb5b-44b5-ad4c-431f221c8076",
+      "name": "Sticky Note9"
+    },
+    {
+      "parameters": {
+        "trigger": [
+          "app_mention"
+        ],
+        "channelId": {
+          "__rl": true,
+          "value": "C0BFP0GMKK4",
+          "mode": "list",
+          "cachedResultName": "job-channel"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.slackTrigger",
+      "typeVersion": 1,
+      "position": [
+        -48,
+        1248
+      ],
+      "id": "46ee0f3d-c8b8-4167-a492-0b2039f872e0",
+      "name": "Slack: Listen for Mention",
+      "webhookId": "8e85fa48-ba17-408a-b5d0-6cf673fc17df",
+      "credentials": {
+        "slackApi": {
+          "id": "IxNRYcJq4WuLSCJW",
+          "name": "Slack Jarvis Bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-3.1-flash-lite",
+          "mode": "list",
+          "cachedResultName": "models/gemini-3.1-flash-lite"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=You are an AI agent tasked with determining whether the following user query is related to searching for a job: \"{{ $json.blocks[0].elements[0].elements[1].text.trim() }}\".\n\nAnalyze the query for keywords, phrases, or context that indicate a job search, such as terms like \"job,\" \"career,\" \"employment,\" \"hiring,\" \"position,\" \"vacancy,\" \"apply,\" \"resume,\" or specific job titles. \n\nAlso consider questions about job applications, interviews, or job requirements. \n\nIf the query indicates a job search, return the text \"YES\". If the query is unrelated to a job search, return \"NO\". \n\nProvide only the response without additional explanation.\n\n"
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        192,
+        1248
+      ],
+      "id": "6eff3f88-39b8-43cb-b8a8-147b2db554ad",
+      "name": "Gemini: Classify Job Query",
+      "retryOnFail": true,
+      "notesInFlow": false,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "TStO3RcEXNj5YuOD",
+          "name": "Google Gemini - Atongeng26"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "f1f6d880-ff14-455c-a682-e8d30faa1c28",
+              "leftValue": "={{ $json.content.parts[0].text.trim().toUpperCase() }}",
+              "rightValue": "YES",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        592,
+        1232
+      ],
+      "id": "d9ac3ff8-7f09-4195-a7b7-8b67cfdd9cb6",
+      "name": "IF: Is Job Query?"
+    },
+    {
+      "parameters": {
+        "content": "## Next\nTesting\n",
+        "height": 176,
+        "width": 150,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        992,
+        1648
+      ],
+      "typeVersion": 1,
+      "id": "88f9aba3-0bb6-44f4-91a4-cf5978e20898",
+      "name": "Sticky Note10"
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "C0BFP0GMKK4",
+          "mode": "list",
+          "cachedResultName": "job-channel"
+        },
+        "text": "=Searching '{{ $('Slack: Listen for Mention').item.json.blocks[0].elements[0].elements[1].text }}' ...",
+        "otherOptions": {
+          "includeLinkToWorkflow": false
+        }
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.4,
+      "position": [
+        800,
+        1104
+      ],
+      "id": "bf56206c-d965-458c-a6a3-db7eb0e06c39",
+      "name": "Slack: Notify Searching",
+      "webhookId": "cd929153-5685-443a-9bec-a05b9aa5ae3a",
+      "retryOnFail": true,
+      "credentials": {
+        "slackApi": {
+          "id": "8nmacc3Doyd4tMq8",
+          "name": "Slack Web Scraper - Copy"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://jsearch.p.rapidapi.com/search-v2",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "query",
+              "value": "={{ $('Slack: Listen for Mention').item.json.blocks[0].elements[0].elements[1].text }}"
+            },
+            {
+              "name": "num_pages",
+              "value": "1"
+            },
+            {
+              "name": "language",
+              "value": "en"
+            },
+            {
+              "name": "date_posted",
+              "value": "3days"
+            },
+            {
+              "name": "work_from_home",
+              "value": "true"
+            },
+            {
+              "name": "employment_types",
+              "value": "FULLTIME, CONTRACTOR, PARTTIME"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-rapidapi-host",
+              "value": "jsearch.p.rapidapi.com"
+            },
+            {
+              "name": "x-rapidapi-key",
+              "value": "d6cbbad33emshac5e1dd580b6d36p11eb3djsn486d23a47d55"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1072,
+        1104
+      ],
+      "id": "0fb2e73c-86f5-4a0d-99b0-291c71ae4308",
+      "name": "Jsearch: Get Job Listings",
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "gZCd0yysBx4lEAjJ",
+          "name": "RapidAPI - JSearch"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "C0BFP0GMKK4",
+          "mode": "list",
+          "cachedResultName": "job-channel"
+        },
+        "text": "Invalid Query / No Result Found.",
+        "otherOptions": {
+          "includeLinkToWorkflow": false
+        }
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.4,
+      "position": [
+        816,
+        1504
+      ],
+      "id": "25cf962c-8994-48cb-a5b4-8680c5cf1113",
+      "name": "Slack: Notify No Results",
+      "webhookId": "53534c22-24e2-45a6-bd74-c46e5e150862",
+      "retryOnFail": true,
+      "credentials": {
+        "slackApi": {
+          "id": "8nmacc3Doyd4tMq8",
+          "name": "Slack Web Scraper - Copy"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "821d39e7-faf7-4dbd-b51a-01f37f7ad005",
+              "leftValue": "={{ $json.data.jobs }}",
+              "rightValue": "",
+              "operator": {
+                "type": "array",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1296,
+        1104
+      ],
+      "id": "87864f7f-85c4-4392-b3be-9e75152f6107",
+      "name": "IF: Jobs Found?"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data.jobs",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        1584,
+        1088
+      ],
+      "id": "1bc8468c-b09d-4367-9d35-e07c231e2701",
+      "name": "Splt: One Job Per Item"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1824,
+        1088
+      ],
+      "id": "7c60e4d9-4ad6-4e2c-97aa-a796bb199996",
+      "name": "Loop: Process Each Job"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "documentURL": "1_P8O0L2RbAZrFbEMA0eqffYuVoukmF6NWPDhhP6-BU0"
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        1968,
+        1280
+      ],
+      "id": "f6e3a55a-a1c5-4d05-8810-170e2ab8bbe7",
+      "name": "Google Docs: Fetch Base Resume",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "1MoCH3ksdUcoHP2D",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an expert resume analyst, ATS optimization specialist, and job-application assistant.  \nYour job is to take a resume, a job title, and a job description, then generate tailored outputs following strict rules.\n\n---------------------------------------\nINPUTS YOU WILL USE\n---------------------------------------\n\nJOB TITLE:\n{{ $('Loop: Process Each Job').item.json.job_title }}\n\nRESUME CONTENT:\n{{ $json.content }}\n\nJOB DESCRIPTION:\n{{ $('Loop: Process Each Job').item.json.job_description }}\n\nJOB POST URL:\n{{ $('Loop: Process Each Job').item.json.job_apply_link }}\n\n---------------------------------------\nTASKS\n---------------------------------------\n\n1. Compare the resume to the job post and job title.\n2. Rewrite the resume content to be ATS-friendly** and highly optimized for the given job post.  \n   - Incorporate keywords from the job description.  \n   - Keep wording professional, concise, and quantifiable when possible.  \n   - Do NOT fabricate experience; strengthen what exists.  \n   - Split the new resume content into these sections, **in paragraph format**, but use **bullets where clarity is needed**:  \n     - `\"ProfessionalSummary\"`: 2–4 sentences summarizing expertise and value.  \n     - `\"CoreSkills\"`: Present as a short paragraph, then optionally list key skills with bullets.  \n     - `\"listOfProjects\"`: Describe projects in short paragraphs, include bullets for key achievements or outcomes.  \n     - `\"ProfessionalExperience\"`: Summarize each role in paragraph format, adding bullets for main responsibilities and measurable achievements.\n\n3. Check if the job post includes an email address.\n   - If yes, create a polished email application draft including:  \n     - `\"draftEmailAddress\"`  \n     - `\"draftEmailSubject\"`  \n     - `\"draftEmailBody\"`\n\n4. Check if the job post url contains an Upwork job link.\n   - If yes, write a compelling Upwork proposal tailored to the job:  \n     - `\"jobProposalforUpwork\"`\n\n5. Return all results strictly in this JSON format with no extra text:\n\n{\n  \"newResumeContent\": {\n    \"ProfessionalSummary\": \"\",\n    \"CoreSkills\": \"\",\n    \"listOfProjects\": \"\",\n    \"ProfessionalExperience\": \"\"\n  },\n  \"jobProposalforUpwork\": \"\",\n  \"draftEmailAddress\": \"\",\n  \"draftEmailSubject\": \"\",\n  \"draftEmailBody\": \"\"\n}\n",
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        2288,
+        1280
+      ],
+      "id": "0e17b3d6-0b70-4459-aa86-c7a07780a485",
+      "name": "Gemini Agent: Tailor Resume + Proposal",
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"newResumeContent\": {\n    \"ProfessionalSummary\": \"\",\n    \"CoreSkills\": \"\",\n    \"listOfProjects\": \"\",\n    \"ProfessionalExperience\": \"\"\n  },\n  \"jobProposalforUpwork\": \"\",\n  \"draftEmailAddress\": \"\",\n  \"draftEmailSubject\": \"\",\n  \"draftEmailBody\": \"\"\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        2480,
+        1472
+      ],
+      "id": "fdbb3662-ef2b-4379-bd0a-8fd685d73da6",
+      "name": "Parser: Resume Json Schema"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3.1-flash-lite",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        2224,
+        1472
+      ],
+      "id": "019a8b13-94b6-4626-9237-68b79dc8e29a",
+      "name": "Gemini: Model for Resume Agent",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "TStO3RcEXNj5YuOD",
+          "name": "Google Gemini - Atongeng26"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "queryString": "=Resume for {{ $('Loop: Process Each Job').item.json.job_title }} - {{ $now.toFormat('MM/dd/yyyy') }}",
+        "filter": {
+          "folderId": {
+            "__rl": true,
+            "value": "1TiggkF_ubRmq5rLUfuBqvY-c5SHUtOUB",
+            "mode": "list",
+            "cachedResultName": "Project 2 - Web Scraper",
+            "cachedResultUrl": "https://drive.google.com/drive/folders/1TiggkF_ubRmq5rLUfuBqvY-c5SHUtOUB"
+          }
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        2656,
+        1280
+      ],
+      "id": "a4a02e1f-ff3e-4e15-8cb9-edae1c5504b0",
+      "name": "Drive: Check if Resume Exist",
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "kSm5V0lcnBrFiF5z",
+          "name": "Google Drive account"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "eae070c6-d8bb-440a-ba2e-5c67bc8dc44c",
+              "leftValue": "={{ $json.id }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notExists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3,
+      "position": [
+        2896,
+        1280
+      ],
+      "id": "43ece0e0-df5f-41da-8c42-3dbcb8a62b55",
+      "name": "IF: Resume File Missing"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3104,
+        1280
+      ],
+      "id": "799c0f20-18fd-469b-9ac7-a8fed941bc3f",
+      "name": "Wait: For Drive Copy to Finish",
+      "webhookId": "5c16c9bc-ea35-4d9f-bf12-63ce007fce7e"
+    },
+    {
+      "parameters": {
+        "operation": "copy",
+        "fileId": {
+          "__rl": true,
+          "value": "1_P8O0L2RbAZrFbEMA0eqffYuVoukmF6NWPDhhP6-BU0",
+          "mode": "list",
+          "cachedResultName": "Sample Resume Template",
+          "cachedResultUrl": "https://docs.google.com/document/d/1_P8O0L2RbAZrFbEMA0eqffYuVoukmF6NWPDhhP6-BU0/edit?usp=drivesdk"
+        },
+        "name": "=Resume for {{ $('Loop: Process Each Job').item.json.job_title }} - {{ $now.toFormat('MM/dd/yyyy') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        3312,
+        1280
+      ],
+      "id": "3b98bf66-cb09-4d89-b90c-e02d26631d6f",
+      "name": "Drive: Copy Resume Template",
+      "retryOnFail": true,
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "kSm5V0lcnBrFiF5z",
+          "name": "Google Drive account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3520,
+        1280
+      ],
+      "id": "8358714e-bb40-47ef-8c16-bc345f4a02de",
+      "name": "Wait: For Doc Update to Finish",
+      "webhookId": "0801570f-895f-4d72-a326-9b49db0bc368"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentURL": "={{ $('Drive: Copy Resume Template').item.json.id }}",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "replaceAll",
+              "text": "{{ProfessionalSummary}}",
+              "replaceText": "={{ $('Gemini Agent: Tailor Resume + Proposal').item.json.output.newResumeContent.ProfessionalSummary }}"
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{CoreSkills}}",
+              "replaceText": "={{ $('Gemini Agent: Tailor Resume + Proposal').item.json.output.newResumeContent.CoreSkills }}"
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{listOfProjects}}",
+              "replaceText": "={{ $('Gemini Agent: Tailor Resume + Proposal').item.json.output.newResumeContent.listOfProjects }}"
+            },
+            {
+              "action": "replaceAll",
+              "text": "{{ProfessionalExperience}}",
+              "replaceText": "={{ $('Gemini Agent: Tailor Resume + Proposal').item.json.output.newResumeContent.ProfessionalExperience }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        3728,
+        1280
+      ],
+      "id": "6a61ec4b-7416-49b7-ad10-390108c3d706",
+      "name": "Google Docs: Insert Tailored Content",
+      "retryOnFail": true,
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "1MoCH3ksdUcoHP2D",
+          "name": "Google Docs account"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "360eb44a-7ca4-4177-8f7d-908bbc723414",
+              "leftValue": "={{ $('Gemini Agent: Tailor Resume + Proposal').item.json.output.draftEmailAddress }}",
+              "rightValue": "@",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "d8f5683f-c06c-4555-a095-5eaeec73473d",
+              "leftValue": "={{ $('Gemini Agent: Tailor Resume + Proposal').item.json.output.draftEmailAddress }}",
+              "rightValue": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+              "operator": {
+                "type": "string",
+                "operation": "regex"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        3952,
+        1280
+      ],
+      "id": "a5d77269-3651-4376-b89b-2dbb68af8df3",
+      "name": "IF: Has Valid Email?"
+    },
+    {
+      "parameters": {
+        "resource": "draft",
+        "subject": "={{ $('Gemini Agent: Tailor Resume + Proposal').item.json.output.draftEmailSubject }}",
+        "message": "={{ $('Gemini Agent: Tailor Resume + Proposal').item.json.output.draftEmailBody }}",
+        "options": {
+          "sendTo": "={{ $('Gemini Agent: Tailor Resume + Proposal').item.json.output.draftEmailAddress }}"
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        4240,
+        1088
+      ],
+      "id": "139bde43-ab55-44c5-833f-131e300e2f5d",
+      "name": "Gmail: Draft Application Email",
+      "webhookId": "8fa8887a-618b-4353-92d2-a07733719e97",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "GHmV1MtTkhWciAHC",
+          "name": "elizarva20"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "C0BFP0GMKK4",
+          "mode": "list",
+          "cachedResultName": "job-channel"
+        },
+        "text": "=Job Title: {{ $('Loop: Process Each Job').item.json.job_title }}\nJob Application URL: {{ $('Loop: Process Each Job').item.json.job_apply_link }}\n\nOptimized Resume:  https://docsgoogle.com.document/d/{{ $('Google Docs: Insert Tailored Content').item.json.documentId }}/\n\n{{ $('Gemini Agent: Tailor Resume + Proposal').item.json.output.jobProposalforUpwork ? `Upwork Proposal: ${$('Gemini Agent: Tailor Resume + Proposal').item.json.output.jobProposalforUpwork}` : ''}}\n\n{{ $('Gemini Agent: Tailor Resume + Proposal').item.json.output?.jobProposalforUpwork ? `Upwork Proposal: ${$('Gemini Agent: Tailor Resume + Proposal').item.json.output.jobProposalforUpwork}` : '' }}\n\n---------------------------\n\n{{ $json.message && $json.message.id ? `Email Draft:https://mail.google.com/mail/u/1/#drafts?compose=${$json.message.id}` : ''}}\n\n\n",
+        "otherOptions": {
+          "includeLinkToWorkflow": false
+        }
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.4,
+      "position": [
+        4416,
+        1472
+      ],
+      "id": "98023be3-a24a-402b-aff8-f2105a3578b4",
+      "name": "Slack: Post Final Summary",
+      "webhookId": "ecc96832-0ca4-4145-9036-ec8d8114b10d",
+      "retryOnFail": true,
+      "credentials": {
+        "slackApi": {
+          "id": "8nmacc3Doyd4tMq8",
+          "name": "Slack Web Scraper - Copy"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "Fdw0M7se9yYu3CSp",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/Fdw0M7se9yYu3CSp",
+          "cachedResultName": "Error Handler / Logger"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "errorMessage": "={{ $json.error.message }}",
+            "nodeName": "Drive: Check if Resume Exist",
+            "workflowName": "Web Scraper for Job Hunting",
+            "originalQuery": "={{ $('Slack: Listen for Mention').item.json.blocks[0].elements[0].elements[1].text }}",
+            "timestamp": "={{ $now }}",
+            "threadTs": "={{ $('Slack: Listen for Mention').item.json.event_ts }}",
+            "jobTitle": "={{ $('Loop: Process Each Job').item.json.job_title }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "errorMessage",
+              "displayName": "errorMessage",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "nodeName",
+              "displayName": "nodeName",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "workflowName",
+              "displayName": "workflowName",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "originalQuery",
+              "displayName": "originalQuery",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "timestamp",
+              "displayName": "timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "threadTs",
+              "displayName": "threadTs",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "jobTitle",
+              "displayName": "jobTitle",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        2688,
+        1696
+      ],
+      "id": "e7174428-19bf-43c9-b55b-e0e2f2e129bb",
+      "name": "Drive: Call 'Error Handler / Logger'",
+      "retryOnFail": true,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "Fdw0M7se9yYu3CSp",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/Fdw0M7se9yYu3CSp",
+          "cachedResultName": "Error Handler / Logger"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "errorMessage": "={{ $json.error.message }}",
+            "nodeName": "Gemini: Classify Job Query",
+            "workflowName": "Web Scraper for Job Hunting",
+            "originalQuery": "={{ $('Slack: Listen for Mention').item.json.blocks[0].elements[0].elements[1].text }}",
+            "timestamp": "={{ $now }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "errorMessage",
+              "displayName": "errorMessage",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "nodeName",
+              "displayName": "nodeName",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "workflowName",
+              "displayName": "workflowName",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "originalQuery",
+              "displayName": "originalQuery",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "timestamp",
+              "displayName": "timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "threadTs",
+              "displayName": "threadTs",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "jobTitle",
+              "displayName": "jobTitle",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        240,
+        1520
+      ],
+      "id": "200e6939-1e5a-46e3-99c4-e87d3743c027",
+      "name": "Gemini: Call 'Error Handler / Logger'"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Slack: Listen for Mention": {
+      "main": [
+        [
+          {
+            "node": "Gemini: Classify Job Query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini: Classify Job Query": {
+      "main": [
+        [
+          {
+            "node": "IF: Is Job Query?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Gemini: Call 'Error Handler / Logger'",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF: Is Job Query?": {
+      "main": [
+        [
+          {
+            "node": "Slack: Notify Searching",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Slack: Notify No Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Slack: Notify Searching": {
+      "main": [
+        [
+          {
+            "node": "Jsearch: Get Job Listings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Jsearch: Get Job Listings": {
+      "main": [
+        [
+          {
+            "node": "IF: Jobs Found?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF: Jobs Found?": {
+      "main": [
+        [
+          {
+            "node": "Splt: One Job Per Item",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Slack: Notify No Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Splt: One Job Per Item": {
+      "main": [
+        [
+          {
+            "node": "Loop: Process Each Job",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop: Process Each Job": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Google Docs: Fetch Base Resume",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Docs: Fetch Base Resume": {
+      "main": [
+        [
+          {
+            "node": "Gemini Agent: Tailor Resume + Proposal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini Agent: Tailor Resume + Proposal": {
+      "main": [
+        [
+          {
+            "node": "Drive: Check if Resume Exist",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser: Resume Json Schema": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Gemini Agent: Tailor Resume + Proposal",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini: Model for Resume Agent": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Gemini Agent: Tailor Resume + Proposal",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Drive: Check if Resume Exist": {
+      "main": [
+        [
+          {
+            "node": "IF: Resume File Missing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Drive: Call 'Error Handler / Logger'",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF: Resume File Missing": {
+      "main": [
+        [
+          {
+            "node": "Wait: For Drive Copy to Finish",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait: For Drive Copy to Finish": {
+      "main": [
+        [
+          {
+            "node": "Drive: Copy Resume Template",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Drive: Copy Resume Template": {
+      "main": [
+        [
+          {
+            "node": "Wait: For Doc Update to Finish",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait: For Doc Update to Finish": {
+      "main": [
+        [
+          {
+            "node": "Google Docs: Insert Tailored Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Docs: Insert Tailored Content": {
+      "main": [
+        [
+          {
+            "node": "IF: Has Valid Email?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF: Has Valid Email?": {
+      "main": [
+        [
+          {
+            "node": "Gmail: Draft Application Email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Slack: Post Final Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail: Draft Application Email": {
+      "main": [
+        [
+          {
+            "node": "Slack: Post Final Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Slack: Post Final Summary": {
+      "main": [
+        [
+          {
+            "node": "Loop: Process Each Job",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Drive: Call 'Error Handler / Logger'": {
+      "main": [
+        [
+          {
+            "node": "Loop: Process Each Job",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Loop: Process Each Job",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false,
+    "timeSavedMode": "fixed",
+    "errorWorkflow": "Fdw0M7se9yYu3CSp",
+    "callerPolicy": "workflowsFromSameOwner",
+    "timezone": "Asia/Singapore"
+  },
+  "versionId": "669691d9-1ba2-46ee-b1a6-e49c1def6aba",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5eaead965196b37b816a6213bb8c0a5560e025fb2b216cec098590990b90a65b"
+  },
+  "id": "RrW5buTuDhe9Vytn",
+  "tags": []
+}
